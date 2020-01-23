@@ -69,5 +69,10 @@ public class AdminHomePage {
 	public void clickUsers() {
 		this.users.click();
 	}
+	
+	// verify logout link is displayed or not
+	public boolean isLogoutDisplayed() {
+		return this.logout.isDisplayed();
+	}
 
 }
