@@ -3,6 +3,7 @@ package stepdefinitions;
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import com.ebanking.cucumber_framework.AdminHomePage;
@@ -13,12 +14,20 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import utitlities.BrowserHelper;
 
-public class LoginSteps extends BrowserHelper {
+public class LoginSteps {
+	WebDriver driver;
+	CommonSteps commonSteps;
 	BankHomePage bankHomePage;
+	
+	
+	
+	public LoginSteps(CommonSteps commonSteps) {
+		this.commonSteps = commonSteps;
+		this.driver = this.commonSteps.getDriver();
+	}
 
 	@Given("admin is in bank home page")
 	public void admin_is_in_bank_home_page() {
-		openBrowser("chrome", "http://primusbank.qedgetech.com/");
 		bankHomePage = new BankHomePage(driver);
 	}
 
