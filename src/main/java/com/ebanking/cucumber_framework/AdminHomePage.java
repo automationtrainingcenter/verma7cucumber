@@ -61,8 +61,9 @@ public class AdminHomePage {
 	}
 
 	// click employees
-	public void clickEmployees() {
+	public EmpoloyeeDetailsPage clickEmployees() {
 		this.employees.click();
+		return PageFactory.initElements(driver, EmpoloyeeDetailsPage.class);
 	}
 
 	// click users

@@ -7,7 +7,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features= {"src/test/java/features/role.feature"},
+		features= {"src/test/java/features/employee.feature"},
 		glue= {"stepdefinitions"},
 		dryRun=false,
 		monochrome=true,
