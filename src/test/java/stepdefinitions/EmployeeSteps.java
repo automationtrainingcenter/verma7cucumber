@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
@@ -76,13 +77,6 @@ public class EmployeeSteps {
 
 	@When("admin enters invalid employee name then admin can see an error message")
 	public void admin_enters_invalid_employee_name_then_admin_can_see_an_error_message(DataTable dataTable) {
-		// Write code here that turns the phrase above into concrete actions
-		// For automatic transformation, change DataTable to one of
-		// E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-		// Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-		// Double, Byte, Short, Long, BigInteger or BigDecimal.
-		//
-		// For other transformations you can register a DataTableType.
 		List<Map<String, String>> data = dataTable.asMaps();
 		for (Map<String, String> row : data) {
 			String empName = row.get("empName");
@@ -100,5 +94,24 @@ public class EmployeeSteps {
 			}
 		}
 
+	}
+
+	@When("admin clicks reset button after filling form then admin can see an empty form")
+	public void admin_clicks_reset_button_after_filling_form_then_admin_can_see_an_empty_form(DataTable dataTable) {
+		List<Map<String, String>> rows = dataTable.asMaps();
+		for (Map<String, String> row : rows) {
+			String empName = row.get("empName");
+			String loginpass = row.get("loginPass");
+			String role = row.get("role");
+			String branchName = row.get("branchName");
+			
+			employeeCreationPage.fillEmpName(empName);
+			employeeCreationPage.fillLoginPass(loginpass);
+			employeeCreationPage.selectRole(role);
+			employeeCreationPage.selectBranch(branchName);
+			employeeCreationPage.clickReset();
+			Assert.assertTrue(employeeCreationPage.isFormReset());
+			
+		}
 	}
 }

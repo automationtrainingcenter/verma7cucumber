@@ -1,6 +1,7 @@
 package com.ebanking.cucumber_framework;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -93,6 +94,12 @@ public class EmployeeCreationPage {
 	public EmpoloyeeDetailsPage clickCancel() {
 		wait.until(ExpectedConditions.elementToBeClickable(this.cancel)).click();
 		return PageFactory.initElements(driver, EmpoloyeeDetailsPage.class);
+	}
+	
+	public boolean isFormReset() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String empNameText = js.executeScript("return arguments[0].value", this.empName).toString();
+		return empNameText.isEmpty();
 	}
 
 }

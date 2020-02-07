@@ -50,8 +50,9 @@ public class AdminHomePage {
 	}
 
 	// click branches
-	public void clickBranches() {
+	public BranchDetailsPage clickBranches() {
 		this.branches.click();
+		return PageFactory.initElements(driver, BranchDetailsPage.class);
 	}
 
 	// click roles

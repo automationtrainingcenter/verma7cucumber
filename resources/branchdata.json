@@ -1,0 +1,34 @@
+[
+	{
+		"branchName": "branchJsonOne",
+		"address1": "lingampalli",
+		"zipcode": "12345",
+		"country": "INDIA",
+		"state": "Delhi",
+		"city": "Delhi"
+	},
+	{
+		"branchName": "branchJsonTwo",
+		"address1": "chandanagar",
+		"zipcode": "12345",
+		"country": "INDIA",
+		"state": "Delhi",
+		"city": "Delhi"
+	},
+	{
+		"branchName": "branchJsonThree",
+		"address1": "hudacolony",
+		"zipcode": "12345",
+		"country": "INDIA",
+		"state": "Delhi",
+		"city": "Delhi"
+	},
+	{
+		"branchName": "branchJsonFour",
+		"address1": "miyapur",
+		"zipcode": "12345",
+		"country": "INDIA",
+		"state": "Delhi",
+		"city": "Delhi"
+	}
+]
