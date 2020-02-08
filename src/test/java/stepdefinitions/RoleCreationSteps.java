@@ -66,7 +66,7 @@ public class RoleCreationSteps {
 	public void admin_can_see_a_message_saying_new_role_created_successfully_with_some_id() {
 		String text = alert.getText();
 		alert.accept();
-		Assert.assertTrue(text.toLowerCase().contains("created sucessfully"));
+		Assert.assertTrue(text.toLowerCase().contains("created sucessfully123"));
 	}
 	
 	@When("admin enters role name {string}")

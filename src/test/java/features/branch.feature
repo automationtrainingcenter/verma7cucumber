@@ -1,3 +1,4 @@
+@branch
 Feature: branch creation 
 
  Background: 
@@ -6,6 +7,6 @@ Feature: branch creation
     And admin clicks branches button
     And admin clicks new branch button
 
-
+@reset @valid @dd @json
 Scenario: branch creation reset with valid data from json file
 	When admin clicks reset button after entering data from "branchdata.json" then admin can an empty form
